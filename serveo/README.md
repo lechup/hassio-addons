@@ -19,13 +19,41 @@ You **DO NOT** need to:
  * "secure" SSL reverse tunnel (see WARNING above)
  * HTTPS support out of the box (see WARNING above)
  * reconnecting after connection failures (both sides) thanks to supervisor (I've tried to use `autossh` or any way to pass `--restart=unless-stopped` to docker container running but failed) - it can take up to 5 minutes to drop previous port forwarding
- * forward up to 3 ports/services (eg. forntend, configurator and terminal/ssh)
+ * forward up to 3 ports/services (eg. frontend, configurator and terminal/ssh)
  * support for own self-hosted serveo instance
  * support for own custom domian like described [here](https://serveo.net/#manual)
 
-## Installation
+## Quick Install
 
-1. add 
+1. Add `https://github.com/lechup/hassio-addons/` as described [here](https://www.home-assistant.io/hassio/installing_third_party_addons/) in hassio docs.
+2. Fill in alias of Your choosing (be creative!), it will be Your subdomain (use letters + numbers + hyphen).
+3. Start addon.
+4. See if logs shows something like
+```
+2019-03-25 23:26:50,207 INFO exited: serveo (exit status 255; not expected)
+2019-03-25 23:26:51,220 INFO spawned: 'serveo' with pid 26
+2019-03-25 23:26:52,223 INFO success: serveo entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Hi there
+Forwarding HTTP traffic from https://myfancyalias.serveo.net
+```
+5. Open `https://myfancyalias.serveo.net` in Your browser, and be happy!
+6. Consider [donating a BEER for me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVTUEX3BDKKN&source=url) and/or serveo.net creator.
+
+## Config params
+
+`alias` - subdomain of your choosing, required even if domain is defined
+
+`server` - in case you are using Your own serveo instance, put it's hostname here
+
+`port1from` - local hassio port to forward from, default `8123` forwards frontend service
+
+`port1to` - remote serveo port to forward to, default `80` translate to 443 (https) 
+
+`port2from`/`port2to`, `port3from`/`port3to` - forward more services/addons like configurator etc. 
+
+`domain` - in case You want to use custom domain feature of serveo.net, see their [docs](https://serveo.net)
+
+`retry_time` - seconds to wait before retrying to reconnect to serveo in case of connection error, please be patient sometimes serveo.net can be down or Your provider can have problems with hostname resolution
 
 ## Example configuration
 
@@ -45,3 +73,5 @@ You **DO NOT** need to:
     "retry_time": 15
 }
 ```
+
+2. Other examples can be added via PR's :)
