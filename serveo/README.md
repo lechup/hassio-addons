@@ -43,7 +43,9 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 
 `alias` - subdomain of your choosing, required even if domain is defined
 
-`server` - in case you are using Your own serveo instance, put it's hostname here
+`private_key` - if you're using your own custom domain, then you need to supply a private key (as per the docs). Paste the literal key in here, and the file will be generated at runtime.
+
+`server` - in case you are using your own serveo instance, put its hostname here
 
 `port1from` - local hassio port to forward from, default `8123` forwards frontend service
 
@@ -62,6 +64,7 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 ```json
 {
     "alias": "myfancysubdomain",
+    "private_key": "-----BEGIN RSA PRIVATE KEY-----\nXXXXXXXXXXXXX\nXXXXXXXXXXXXX\n-----END RSA PRIVATE KEY-----",
     "server": "serveo.net",
     "port1from": 8123,
     "port1to": 80,
