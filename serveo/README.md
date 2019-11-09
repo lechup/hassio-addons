@@ -1,6 +1,8 @@
+This is a fork of [lechup/hassio-addons](https://github.com/lechup/hassio-addons) with added support for custom ssh port.
+
 ## WARNING
 
-I'm not creator of `serveo.net`. All Your traffic can be eavesdropped by the owner of this server. **In case You have external IP I recommend to use DuckDNS or any other dynamic DNS service**.
+I'm not creator of `serveo.net`. All Your traffic can be eavesdropped by the owner of this server. I would recommend [signing up on Google Cloud and getting a lifetime free Compute Engine instance](https://cloud.google.com/free/) and setup serveo there.
 
 ## About
 
@@ -25,7 +27,7 @@ You **DO NOT** need to:
 
 ## Quick Install
 
-1. Add `https://github.com/lechup/hassio-addons/` as described [here](https://www.home-assistant.io/hassio/installing_third_party_addons/) in hassio docs.
+1. Add `https://github.com/sahilanguralla/hassio-addons/` as described [here](https://www.home-assistant.io/hassio/installing_third_party_addons/) in hassio docs.
 2. Fill in alias of Your choosing (be creative!), it will be Your subdomain (use letters + numbers + hyphen).
 3. Start addon.
 4. See if logs shows something like
@@ -39,7 +41,7 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 ```
 
 5. Open `https://myfancyalias.serveo.net` in Your browser, and be happy!
-6. Consider [donating a BEER for me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVTUEX3BDKKN&source=url) and/or serveo.net creator.
+6. Consider donating a BEER for [me](https://paypal.me/vendettacbs), [lechup](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVTUEX3BDKKN&source=url) and/or serveo.net creator.
 
 ## Config params
 

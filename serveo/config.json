@@ -3,7 +3,7 @@
   "version": "0.8",
   "slug": "serveo",
   "description": "Expose Your hassio to the internet through SSL/HTTPS with one click thanks to SERVEO.net. You DO NOT need to: have external IP, make any router configuration (no need to forward any port), create any logins (DuckDNS and others dynamic DNS services require all this hassle).",
-  "url": "https://github.com/lechup/hassio-addons/tree/master/serveo",
+  "url": "https://github.com/sahilanguralla/hassio-addons/tree/master/serveo",
   "arch": ["armhf", "aarch64", "amd64", "i386"],
   "startup": "application",
   "boot": "auto",
