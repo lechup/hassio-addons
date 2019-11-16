@@ -35,12 +35,12 @@ PORT2=""
 PORT3=""
 
 
-if [ "${PORT2FROM}" != "0" ] && ["${PORT2TO}" != "0"]
+if [ "${PORT2FROM}" != "0" ] && [ "${PORT2TO}" != "0" ]
 then
     PORT2=" -R ${DOMAIN}:${PORT2TO}:localhost:${PORT2FROM}"
 fi
 
-if [ "${PORT3FROM}" != "0" ] && ["${PORT3TO}" != "0"]
+if [ "${PORT3FROM}" != "0" ] && [ "${PORT3TO}" != "0" ]
 then
     PORT3=" -R  ${DOMAIN}:${PORT3TO}:localhost:${PORT3FROM}"
 fi
