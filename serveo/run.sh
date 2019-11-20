@@ -35,8 +35,6 @@ PORT1="-R ${DOMAIN}:${PORT1TO}:localhost:${PORT1FROM}"
 PORT2=""
 PORT3=""
 
-SSH_PORT_PARAM=""
-
 if [ "${PORT2FROM}" != "0" ] && [ "${PORT2TO}" != "0" ]
 then
     PORT2=" -R ${DOMAIN}:${PORT2TO}:localhost:${PORT2FROM}"
@@ -47,12 +45,7 @@ then
     PORT3=" -R  ${DOMAIN}:${PORT3TO}:localhost:${PORT3FROM}"
 fi
 
-if [ "${SSH_PORT}" != "0" ]
-then
-    SSH_PORT_PARAM=" -p ${SSH_PORT}"
-fi
-
-CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 ${PORT1}${PORT2}${PORT3} ${ALIAS}@${SERVER}${SSH_PORT_PARAM}'"
+CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 ${PORT1}${PORT2}${PORT3} -p ${SSH_PORT} ${ALIAS}@${SERVER}'"
 
 echo "Running '${CMD}' through supervisor!"
 
