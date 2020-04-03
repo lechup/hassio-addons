@@ -4,7 +4,7 @@ FROM $BUILD_FROM
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache jq supervisor
+RUN apk add --no-cache jq autossh supervisor
 
 # Copy data for add-on
 COPY run.sh /
