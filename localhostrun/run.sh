@@ -6,8 +6,6 @@ CONFIG_PATH=/data/options.json
 ALIAS="$(jq --raw-output '.alias' ${CONFIG_PATH})"
 PRIVATE_KEY="$(jq --raw-output '.private_key' ${CONFIG_PATH})"
 SERVER="$(jq --raw-output '.server' ${CONFIG_PATH})"
-SSH_PORT="$(jq --raw-output '.ssh_port' ${CONFIG_PATH})"
-DOMAIN="$(jq --raw-output '.domain' ${CONFIG_PATH})"
 PORT1FROM="$(jq --raw-output '.port1from' ${CONFIG_PATH})"
 PORT1TO="$(jq --raw-output '.port1to' ${CONFIG_PATH})"
 PORT2FROM="$(jq --raw-output '.port2from' ${CONFIG_PATH})"
@@ -40,7 +38,7 @@ then
     PORT3=" -R  ${PORT3TO}:localhost:${PORT3FROM}"
 fi
 
-CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 ${PORT1}${PORT2}${PORT3} -p ${SSH_PORT} ${ALIAS}@${SERVER}'"
+CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 ${PORT1}${PORT2}${PORT3} ${ALIAS}@${SERVER}'"
 
 echo "Running '${CMD}' through supervisor!"
 
@@ -52,7 +50,7 @@ logfile=/dev/null
 logfile_maxbytes=0
 EOL
 cat >> /etc/supervisor-docker.conf << EOL
-[program:serveo]
+[program:localhostrun]
 command=${CMD}
 autostart=true
 autorestart=true

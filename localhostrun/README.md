@@ -31,7 +31,7 @@ You **DO NOT** need to:
 Connect to http://myfancyurl-e12121234.localhost.run or http://myfancyurl-e12121234.localhost.run
 ```
 5. Open `http://myfancyurl-e12121234.localhost.run` in Your browser, and be happy!
-6. Consider [donating a BEER for me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVTUEX3BDKKN&source=url) and/or serveo.net creator.
+6. Consider [donating a BEER for me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=VGVTUEX3BDKKN&source=url) and/or localhost.run creator.
 
 ## Config params
 
@@ -41,15 +41,13 @@ Connect to http://myfancyurl-e12121234.localhost.run or http://myfancyurl-e12121
 
 `server` - future use,
 
-`ssh_port` - in case your custom serveo instance is running on port other than default ssh port (i.e. 22), put it here
-
 `port1from` - local hassio port to forward from, default `8123` forwards frontend service
 
-`port1to` - remote serveo port to forward to, default `80` translate to 443 (https) 
+`port1to` - remote port to forward to, default `80` translate to 443 (https)
 
 `port2from`/`port2to`, `port3from`/`port3to` - forward more services/addons like configurator etc. 
 
-`retry_time` - seconds to wait before retrying to reconnect to serveo in case of connection error, please be patient sometimes serveo.net can be down or Your provider can have problems with hostname resolution
+`retry_time` - seconds to wait before retrying to reconnect to localhost.run in case of connection error, please be patient sometimes localhost.run can be down or Your provider can have problems with hostname resolution
 
 ## Example configuration
 

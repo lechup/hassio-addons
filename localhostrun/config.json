@@ -1,6 +1,6 @@
 {
   "name": "localhost.run free reverse ssl proxy",
-  "version": "0.2",
+  "version": "0.2.1",
   "slug": "localhostrun",
   "description": "Expose Your hassio to the internet through SSL/HTTPS with one click thanks to localhost.run. You DO NOT need to: have external IP, make any router configuration (no need to forward any port), create any logins (DuckDNS and others dynamic DNS services require all this hassle).",
   "url": "https://github.com/lechup/hassio-addons/tree/master/localhostrun",
@@ -9,23 +9,21 @@
   "boot": "auto",
   "host_network": true,
   "options": {
-    "alias": null,
+    "alias": "foo",
     "private_key": "",
     "server": "ssh.localhost.run",
-    "ssh_port": 22,
     "port1from": 8123,
     "port1to": 80,
     "port2from": 0,
     "port2to": 0,
     "port3from": 0,
     "port3to": 0,
-    "retry_time": 15
+    "retry_time": 60
   },
   "schema": {
     "alias": "str",
     "private_key": "str",
     "server": "str",
-    "ssh_port": "int",
     "port1from": "int",
     "port1to": "int",
     "port2from": "int",
