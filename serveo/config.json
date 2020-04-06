@@ -1,6 +1,6 @@
 {
   "name": "Serveo Free Reverse SSL Proxy",
-  "version": "0.8",
+  "version": "0.9",
   "slug": "serveo",
   "description": "Expose Your hassio to the internet through SSL/HTTPS with one click thanks to SERVEO.net. You DO NOT need to: have external IP, make any router configuration (no need to forward any port), create any logins (DuckDNS and others dynamic DNS services require all this hassle).",
   "url": "https://github.com/lechup/hassio-addons/tree/master/serveo",
@@ -12,6 +12,7 @@
     "alias": null,
     "private_key": null,
     "server": "serveo.net",
+    "ssh_port": 22,
     "port1from": 8123,
     "port1to": 80,
     "port2from": 0,
@@ -25,6 +26,7 @@
     "alias": "str",
     "private_key": "str",
     "server": "str",
+    "ssh_port": "int",
     "port1from": "int",
     "port1to": "int",
     "port2from": "int",

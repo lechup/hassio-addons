@@ -47,6 +47,8 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 
 `server` - in case you are using your own serveo instance, put its hostname here
 
+`ssh_port` - in case your custom serveo instance is running on port other than default ssh port (i.e. 22), put it here
+
 `port1from` - local hassio port to forward from, default `8123` forwards frontend service
 
 `port1to` - remote serveo port to forward to, default `80` translate to 443 (https) 
@@ -66,6 +68,7 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
     "alias": "myfancysubdomain",
     "private_key": "",
     "server": "serveo.net",
+    "ssh_port": 22,
     "port1from": 8123,
     "port1to": 80,
     "port2from": 0,
