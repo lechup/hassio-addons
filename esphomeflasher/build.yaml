@@ -1,0 +1,5 @@
+build_from:
+  armhf: esphome/esphome-hassio-armhf
+  aarch64: esphome/esphome-hassio-aarch64
+  amd64: esphome/esphome-hassio-amd64
+  i386: esphome/esphome-hassio-i386
