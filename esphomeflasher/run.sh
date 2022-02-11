@@ -14,6 +14,12 @@ from esphome import espota2
 espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")
 EOL
 
-echo 'Running espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!'
+echo "Running espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!"
+
+printenv
+ls -la /bin
+ls -la /usr/bin
+
+which python
 
 exec python /esphomeflasher.py
