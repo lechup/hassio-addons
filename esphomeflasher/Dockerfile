@@ -5,6 +5,8 @@ RUN \
   apk add --no-cache \
     python3
 
+RUN wget -O /espota.py https://raw.githubusercontent.com/esp8266/Arduino/master/tools/espota.py
+
 COPY run.sh /
 RUN chmod a+x /run.sh
 
