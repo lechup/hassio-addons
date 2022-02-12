@@ -18,6 +18,7 @@ echo "Running espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${
 
 ls -la /bin/python* || true
 ls -la /usr/bin/python* || true
+find / -name "python*" || true
 
 which python2 || true
 
