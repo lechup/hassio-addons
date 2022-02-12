@@ -5,11 +5,6 @@
     "armv7": "armv7",
     "amd64": "amd64"
   },
-  "args": {
-    "PYTHON_VERSION": "3.9.9",
-    "PIP_VERSION": "22.0.3",
-    "GPG_KEY": "E3FF2839C048B25C084DEBE9B26995E310250568"
-  },
   "labels": {
     "io.hass.base.name": "python",
     "org.opencontainers.image.source": "https://github.com/home-assistant/docker-base"

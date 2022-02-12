@@ -16,8 +16,6 @@ EOL
 
 echo "Running espota2.run_ota("${OTA_HOST}", "${OTA_PORT}", "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!"
 
-find / || true
-
 which python3 || true
 
 exec python3 /esphomeflasher.py
