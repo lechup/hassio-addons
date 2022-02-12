@@ -127,7 +127,8 @@ RUN \
         /tmp/* \
     \
     && python3 --version \
-    && pip3 --version
+    && pip3 --version \
+    && pip3 install esphome
 
 COPY run.sh /
 RUN chmod a+x /run.sh
