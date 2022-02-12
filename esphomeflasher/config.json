@@ -1,28 +1,35 @@
 {
-  "name": "Esphome Flasher",
-  "version": "0.2",
-  "slug": "esphomeflasher",
-  "description": "Upload binary file to esphome device via ota. By default ota ports: 8266 for ESP8266 board and 3232 for ESP32 board.",
-  "url": "https://github.com/lechup/hassio-addons/tree/master/esphomeflasher",
-  "arch": ["armv7", "aarch64", "amd64", "armhf", "armv7", "i386"],
-  "startup": "application",
-  "boot": "manual",
-  "auth_api": true,
-  "host_network": true,
-  "map": [
-    "ssl:ro",
-    "config:rw"
+  "name":"Esphome Flasher",
+  "version":"0.2.1",
+  "slug":"esphomeflasher",
+  "description":"Upload binary file to esphome device via ota. By default ota ports: 8266 for ESP8266 board and 3232 for ESP32 board.",
+  "url":"https://github.com/lechup/hassio-addons/tree/master/esphomeflasher",
+  "arch":[
+     "armv7",
+     "aarch64",
+     "amd64",
+     "armhf",
+     "armv7",
+     "i386"
   ],
-  "options": {
-    "ota_host": "myesphomedevice.lan",
-    "ota_bin_file_path": "/esphome/firmware.bin",
-    "ota_port": 8266,
-    "ota_password": ""
+  "startup":"application",
+  "boot":"manual",
+  "auth_api":true,
+  "host_network":true,
+  "map":[
+     "ssl:ro",
+     "config:rw"
+  ],
+  "options":{
+     "ota_host":"myesphomedevice.lan",
+     "ota_bin_file_path":"/esphome/firmware.bin",
+     "ota_port":8266,
+     "ota_password":""
   },
-  "schema": {
-    "ota_host": "str",
-    "ota_bin_file_path": "str",
-    "ota_port": "int",
-    "ota_password": "str"
+  "schema":{
+     "ota_host":"str",
+     "ota_bin_file_path":"str",
+     "ota_port":"int",
+     "ota_password":"str"
   }
 }
