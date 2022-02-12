@@ -1,5 +1,9 @@
-ARG BUILD_FROM=homeassistant/${BUILD_ARCH}-base-python/tags
+ARG BUILD_FROM=homeassistant/aarch64-base-python:latest
 FROM ${BUILD_FROM}
+
+RUN apk add --no-cache \
+    g++ make \
+    libffi-dev
 
 RUN pip install esphome 2>&1
 
