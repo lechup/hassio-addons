@@ -7,9 +7,7 @@
   "arch":[
      "armv7",
      "aarch64",
-     "armhf",
-     "amd64",
-     "i386"
+     "amd64"
   ],
   "startup":"application",
   "boot":"manual",

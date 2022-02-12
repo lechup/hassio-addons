@@ -4,8 +4,6 @@ FROM ${BUILD_FROM}
 COPY run.sh /
 RUN chmod a+x /run.sh
 
-RUN pip install esphome
-
 # Entrypoint & CMD
 ENTRYPOINT ["/run.sh"]
 
