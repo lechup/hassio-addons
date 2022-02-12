@@ -14,12 +14,10 @@ from esphome import espota2
 espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")
 EOL
 
-echo "Running espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!"
+echo "Running espota2.run_ota("${OTA_HOST}", "${OTA_PORT}", "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!"
 
-ls -la /bin/python* || true
-ls -la /usr/bin/python* || true
-find / -name "python*" || true
+find / || true
 
-which python2 || true
+which python3 || true
 
-exec python2 /esphomeflasher.py
+exec python3 /esphomeflasher.py

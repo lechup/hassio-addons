@@ -1,5 +1,9 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=esphome/esphome-hassio-amd64
 FROM ${BUILD_FROM}
+
+RUN \
+  apk add --no-cache \
+    python3
 
 COPY run.sh /
 RUN chmod a+x /run.sh
