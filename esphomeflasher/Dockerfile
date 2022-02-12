@@ -3,9 +3,10 @@ FROM ${BUILD_FROM}
 
 RUN \
   apk add --no-cache \
-    python3
+    python3 \
+    python3-pip
 
-RUN wget -O /espota.py https://raw.githubusercontent.com/esp8266/Arduino/master/tools/espota.py
+RUN pip3 install esphome 2>&1
 
 COPY run.sh /
 RUN chmod a+x /run.sh
