@@ -6,7 +6,6 @@
   "url":"https://github.com/lechup/hassio-addons/tree/master/esphomeflasher",
   "arch":[
      "armv7",
-     "armhf",
      "aarch64",
      "amd64"
   ],
@@ -19,8 +18,8 @@
      "config:rw"
   ],
   "options":{
-     "ota_host":"myesphomedevice.lan",
-     "ota_bin_file_path":"/esphome/firmware.bin",
+     "ota_host":"bt-eq3-tracker.local",
+     "ota_bin_file_path":"/config/esphome/bt-eq3-tracker.bin",
      "ota_port":8266,
      "ota_password":""
   },
