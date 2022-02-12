@@ -1,10 +1,10 @@
 {
   "name": "Esphome Flasher",
-  "version": "0.1.1",
+  "version": "0.2",
   "slug": "esphomeflasher",
   "description": "Upload binary file to esphome device via ota. By default ota ports: 8266 for ESP8266 board and 3232 for ESP32 board.",
   "url": "https://github.com/lechup/hassio-addons/tree/master/esphomeflasher",
-  "arch": ["armv7", "aarch64", "amd64"],
+  "arch": ["armv7", "aarch64", "amd64", "armhf", "armv7", "i386"],
   "startup": "application",
   "boot": "manual",
   "auth_api": true,
