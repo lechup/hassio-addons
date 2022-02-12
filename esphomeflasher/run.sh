@@ -16,6 +16,10 @@ EOL
 
 echo "Running espota2.run_ota("${OTA_HOST}", ${OTA_PORT}, "${OTA_PASSWORD}", "${OTA_BIN_FILE_PATH}")!"
 
-which python3
+printenv
+ls -la /bin
+ls -la /usr/bin
 
-exec python3 /esphomeflasher.py
+which python
+
+exec python /esphomeflasher.py
