@@ -8,6 +8,7 @@
   "startup": "application",
   "boot": "auto",
   "host_network": true,
+  "init": false,
   "options": {
     "alias": null,
     "private_key": null,
