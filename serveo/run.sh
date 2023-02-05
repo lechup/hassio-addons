@@ -50,7 +50,7 @@ then
     SSH_PORT_PARAM=" -p ${SSH_PORT}"
 fi
 
-CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 ${PORT1}${PORT2}${PORT3} ${ALIAS}@${SERVER}${SSH_PORT_PARAM}'"
+CMD="/bin/bash -c 'sleep ${RETRY_TIME} && ssh ${IDENTITY} -tt -o ExitOnForwardFailure=yes -o StrictHostKeyChecking=no -o ServerAliveInterval=10 -o ServerAliveCountMax=3 -o HostKeyAlgorithms=+ssh-rsa ${PORT1}${PORT2}${PORT3} ${ALIAS}@${SERVER}${SSH_PORT_PARAM}'"
 
 echo "Running '${CMD}' through supervisor!"
 
