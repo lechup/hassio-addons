@@ -45,21 +45,17 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 
 ## Config params
 
-`alias` - subdomain of your choosing, required even if domain is defined
-
 `private_key` - if you're using your own custom domain, then you need to supply a private key (as per the docs). Paste the literal key in here (string in form of: "-----BEGIN RSA PRIVATE KEY-----\nXXXXXXXXXXXXX\nXXXXXXXXXXXXX\n-----END RSA PRIVATE KEY-----"), and the file will be generated at runtime.
 
 `server` - in case you are using your own serveo instance, put its hostname here
 
 `ssh_port` - in case your custom serveo instance is running on port other than default ssh port (i.e. 22), put it here
 
-`port1from` - local hassio port to forward from, default `8123` forwards frontend service
-
-`port1to` - remote serveo port to forward to, default `80` translate to 443 (https)
-
-`port2from`/`port2to`, `port3from`/`port3to` - forward more services/addons like configurator etc.
-
-`domain` - in case You want to use custom domain feature of serveo.net, see their [docs](https://serveo.net)
+`exposed_ports` - list of ports that should be exposed along with domain configuration
+  * `to` - remote serveo port to forward to, default `80` translate to 443 (https)
+  * `from` - local hassio port to forward from, default `8123` forwards frontend service
+  * `alias` - subdomain of your choosing, required even if domain is defined
+  * `domain` - in case You want to use custom domain feature of serveo.net, see their [docs](https://serveo.net)
 
 `retry_time` - seconds to wait before retrying to reconnect to serveo in case of connection error, please be patient sometimes serveo.net can be down or Your provider can have problems with hostname resolution
 
@@ -67,21 +63,16 @@ Forwarding HTTP traffic from https://myfancyalias.serveo.net
 
 1. Easiest config, expose only frontend:
 
-```json
-{
-  "alias": "myfancysubdomain",
-  "private_key": "",
-  "server": "serveo.net",
-  "ssh_port": 22,
-  "port1from": 8123,
-  "port1to": 80,
-  "port2from": 0,
-  "port2to": 0,
-  "port3from": 0,
-  "port3to": 0,
-  "domain": "",
-  "retry_time": 15
-}
+```yaml
+private_key: ''
+server: serveo.net
+ssh_port: 22
+exposed_ports:
+  - from: 8123
+    to: 80
+    alias: ''
+    domain: ''
+retry_time: 15
 ```
 
 2. Other examples can be added via PR's :)

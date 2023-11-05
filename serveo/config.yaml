@@ -1,0 +1,37 @@
+name: Serveo Free Reverse SSL Proxy
+version: '0.12'
+slug: serveo
+description: >
+  Expose Your hassio to the internet through SSL/HTTPS with one click thanks to SERVEO.net.
+  You DO NOT need to: have an external IP, make any router configuration (no need to forward any port),
+  create any logins (DuckDNS and other dynamic DNS services require all this hassle).
+url: https://github.com/sahilanguralla/hassio-addons/tree/master/serveo
+arch:
+  - armhf
+  - aarch64
+  - amd64
+  - i386
+startup: application
+boot: auto
+host_network: true
+init: false
+options:
+  private_key: ''
+  server: serveo.net
+  ssh_port: 22
+  exposed_ports:
+    - from: 8123
+      to: 80
+      alias: ''
+      domain: ''
+  retry_time: 15
+schema:
+  private_key: str?
+  server: str?
+  ssh_port: int?
+  exposed_ports:
+    - from: int
+      to: int
+      alias: str?
+      domain: str?
+  retry_time: int
